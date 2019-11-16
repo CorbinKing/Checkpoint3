@@ -1,0 +1,48 @@
+﻿@model BlowOut.Models.Gmail
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+
+</head>
+
+<body>
+    <div>
+        @using (Html.BeginForm("Index", "Gmail", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <center>
+                <h1>Send us  an Email</h1>
+                <hr />
+                <table>
+                    <tr>
+                        <td style="width: 80px">
+                            To:
+                        </td>
+                        <td>@Html.TextBoxFor(model=>model.To)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Subject:
+                        </td>
+                        <td>@Html.TextAreaFor(model => model.Subject)</td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            Body:
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.Body, new {rows="15",  cols="25"})</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Send"/>
+                        </td>
+                    </tr>
+                </table>
+            </center>
+        }
+    </div>
+    
+</body>
+
